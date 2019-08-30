@@ -45,7 +45,9 @@ func (t *DingtalkRobotMessaging) sendMessage(title, message string) {
 		},
 	}
 
-	_, _ = go_utils.HttpPost("https://oapi.dingtalk.com/robot/send?access_token="+t.accessToken, msg)
+	url := go_utils.EmptyThen(devopsConf.DingtalkRobotUrl,
+		"https://oapi.dingtalk.com/robot/send?access_token=")
+	_, _ = go_utils.HttpPost(url+t.accessToken, msg)
 }
 
 type QywxAppMessaging struct {

@@ -17,6 +17,8 @@ type DevopsConf struct {
 	BlackcatProcesses    map[string]BlackcatProcessConf
 	BlackcatHttpCheckers map[string]BlackcatHttpChecker
 	Misc                 MiscConf
+
+	DingtalkRobotUrl string
 }
 
 type MiscConf struct {
