@@ -95,8 +95,8 @@ func blackcatAlertAgent(result *AgentCommandResult) {
 
 		for _, du := range result.DiskUsages {
 			if du.Free < threshold.DiskAvailThresholdSize {
-				content = append(content, "磁盘告警。"+du.Path+"可用"+humanize.IBytes(result.MemAvailable)+
-					"低于"+threshold.MemAvailThreshold)
+				content = append(content, "磁盘告警。"+du.Path+"可用"+humanize.IBytes(du.Free)+
+					"低于"+threshold.DiskAvailThreshold)
 			}
 			availRatio := 1 - du.UsedPercent/100
 			if availRatio < threshold.DiskAvailRatioThreshold {
