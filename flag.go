@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"github.com/BurntSushi/toml"
+	"github.com/CharLemAznable/amber"
 	"github.com/bingoohuang/go-utils"
 	"github.com/shirou/gopsutil/host"
 	"log"
@@ -35,6 +36,14 @@ type AppConfig struct {
 	RedirectUri string
 	LocalUrl    string
 	ForceLogin  bool
+
+	AmberLoginEnabled  bool
+	AmberAppID         string
+	AmberEncryptKey    string
+	AmberCookieName    string
+	AmberAmberLoginURL string
+	AmberLocalURL      string
+	AmberForceLogin    bool
 }
 
 var appConfig AppConfig
@@ -81,6 +90,18 @@ ConfigFile = "config.toml"
 		RedirectUri: appConfig.RedirectUri,
 		LocalUrl:    appConfig.LocalUrl,
 		ForceLogin:  appConfig.ForceLogin,
+	}
+	go_utils.PrepareMustAuthFlag(&authParam)
+
+	if appConfig.AmberLoginEnabled {
+		amber.ConfigInstance = amber.NewConfig(
+			amber.WithAppID(appConfig.AmberAppID),
+			amber.WithEncryptKey(appConfig.AmberEncryptKey),
+			amber.WithCookieName(appConfig.AmberCookieName),
+			amber.WithAmberLoginURL(appConfig.AmberAmberLoginURL),
+			amber.WithLocalURL(appConfig.AmberLocalURL),
+			amber.WithForceLogin(appConfig.AmberForceLogin),
+		)
 	}
 
 	httpPort = strconv.Itoa(appConfig.HttpPort)

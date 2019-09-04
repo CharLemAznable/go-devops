@@ -3,6 +3,7 @@ module github.com/bingoohuang/go-devops
 require (
 	github.com/AndreasBriese/bbloom v0.0.0-20180913140656-343706a395b7 // indirect
 	github.com/BurntSushi/toml v0.3.1
+	github.com/CharLemAznable/amber v0.2.1
 	github.com/StackExchange/wmi v0.0.0-20180725035823-b12b22c5341f // indirect
 	github.com/bingoohuang/go-utils v0.0.0-20181207100234-b7a095fc0dad
 	github.com/deckarep/golang-set v1.7.1 // indirect
@@ -21,7 +22,7 @@ require (
 	github.com/onsi/ginkgo v1.7.0 // indirect
 	github.com/onsi/gomega v1.4.3 // indirect
 	github.com/patrickmn/go-cache v2.1.0+incompatible
-	github.com/pkg/errors v0.8.0
+	github.com/pkg/errors v0.8.1
 	github.com/robfig/cron v0.0.0-20180505203441-b41be1df6967
 	github.com/shirou/gopsutil v2.18.11+incompatible
 	github.com/shirou/w32 v0.0.0-20160930032740-bb4de0191aa4 // indirect

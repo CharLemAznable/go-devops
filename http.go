@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/CharLemAznable/amber"
 	"github.com/bingoohuang/go-utils"
 	"github.com/gorilla/mux"
 	"log"
@@ -42,7 +43,11 @@ func StartHttpSever() {
 
 func handleFunc(r *mux.Router, path string, f func(http.ResponseWriter, *http.Request), requiredGzip bool) {
 	wrap := go_utils.DumpRequest(f)
-	wrap = go_utils.MustAuth(wrap, authParam)
+	if nil != amber.ConfigInstance {
+		wrap = amber.AuthAmber(wrap)
+	} else {
+		wrap = go_utils.MustAuth(wrap, authParam)
+	}
 
 	if requiredGzip {
 		wrap = go_utils.GzipHandlerFunc(wrap)

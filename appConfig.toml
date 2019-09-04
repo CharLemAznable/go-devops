@@ -5,3 +5,10 @@ RpcPort = 6979
 DevMode = false
 ConfigFile = "config-test.toml"
 
+AmberLoginEnabled = false
+AmberAppID = ""
+AmberEncryptKey = ""
+AmberCookieName = "amber-login-auth"
+AmberAmberLoginURL = ""
+AmberLocalURL = ""
+AmberForceLogin = false
