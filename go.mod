@@ -3,7 +3,7 @@ module github.com/bingoohuang/go-devops
 require (
 	github.com/AndreasBriese/bbloom v0.0.0-20180913140656-343706a395b7 // indirect
 	github.com/BurntSushi/toml v0.3.1
-	github.com/CharLemAznable/amber v0.2.1
+	github.com/CharLemAznable/amber v0.3.0
 	github.com/StackExchange/wmi v0.0.0-20180725035823-b12b22c5341f // indirect
 	github.com/bingoohuang/go-utils v0.0.0-20181207100234-b7a095fc0dad
 	github.com/deckarep/golang-set v1.7.1 // indirect
